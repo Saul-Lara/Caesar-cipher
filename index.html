@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css"
+		/>
+		<script
+			defer
+			src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"
+		></script>
+
+		<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+		<script
+			id="MathJax-script"
+			async
+			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+		></script>
+
+		<title>Cifrado Cesar</title>
+	</head>
+	<body>
+		<section class="hero is-primary">
+			<div class="hero-body">
+				<div class="container">
+					<h1 class="title">Cifrado Cesar</h1>
+				</div>
+			</div>
+		</section>
+
+		<div class="columns">
+			<div class="column mx-4 my-2">
+				<div class="content">
+					<p>
+						Cifrado César, también conocido como cifrado por desplazamiento, es
+						una de las técnicas de codificación más simples y más usadas. Es un
+						tipo de cifrado por sustitución en el que una letra en el texto
+						original es reemplazada por otra letra que se encuentra a N
+						posiciones más adelante en el alfabeto.
+					</p>
+
+					<div class="table-container">
+						<table class="table is-bordered has-text-centered">
+							<thead>
+								<tr>
+									<th>Funcion de encriptacion</th>
+									<th>Llave</th>
+									<th>Funcion de desencriptacion</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>
+										\[E_{(a,b)}(M)=(aM+b)\bmod N \begin{cases}a,b < N\end{cases}
+										\]
+									</td>
+									<td>\[K(a,b) \]</td>
+									<td>
+										\[D_{(a,b)}(M) = (\frac{M - b}{a})\bmod N \begin{cases}a,b <
+										N\end{cases}\]
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="columns">
+			<div class="column mx-4">
+				<div class="field">
+					<label class="label">Mensaje a cifrar / descifrar :</label>
+					<div class="control">
+						<textarea
+							class="textarea has-fixed-size is-info"
+							rows="7"
+						></textarea>
+					</div>
+				</div>
+
+				<div class="field is-grouped is-grouped-centered">
+					<div class="control">
+						<div class="field is-horizontal">
+							<div class="field-label is-normal">
+								<label class="label">a:</label>
+							</div>
+							<div class="field-body">
+								<div class="field">
+									<p class="control">
+										<input
+											class="input"
+											type="number"
+											id="valueA"
+											min="1"
+											value="1"
+										/>
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="control">
+						<div class="field is-horizontal">
+							<div class="field-label is-normal">
+								<label class="label">b:</label>
+							</div>
+							<div class="field-body">
+								<div class="field">
+									<p class="control">
+										<input
+											class="input"
+											id="valueB"
+											type="number"
+											min="1"
+											value="1"
+										/>
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="field is-grouped is-grouped-centered">
+					<div class="control">
+						<button class="button is-info" id="btn_cipher">Cifrar</button>
+					</div>
+					<div class="control">
+						<button class="button is-primary" id="btn_decipher">
+							Decifrar
+						</button>
+					</div>
+					<div class="control has-icons-left">
+						<div class="select">
+							<select>
+								<option selected>Spanish</option>
+								<option>English</option>
+							</select>
+						</div>
+						<div class="icon is-small is-left">
+							<i class="fas fa-globe"></i>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="column mx-4">
+				<div class="content">
+					<label class="label">Resultado :</label>
+					<p>Funcion de encriptaci</p>
+				</div>
+			</div>
+		</div>
+
+		<footer class="footer">
+			<div class="content has-text-centered">
+				<p>
+					Developed by
+					<a href="https://github.com/Saul-Lara" class="tag is-dark is-medium">
+						<i class="fab fa-github"></i> Saul Lara
+					</a>
+					. The source code is licensed
+					<a href="http://opensource.org/licenses/mit-license.php">MIT</a>
+				</p>
+			</div>
+		</footer>
+
+		<script src="./app.js" type="module"></script>
+	</body>
+</html>
