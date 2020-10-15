@@ -1,4 +1,4 @@
-import caesarCipher from "./cesar.js";
+import caesarCipher from "./caesar.js";
 
 document.addEventListener("DOMContentLoaded", function () {
 	var btn_cipher = document.getElementById("btn_cipher");
