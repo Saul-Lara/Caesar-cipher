@@ -1,8 +1,8 @@
 class caesarCipher {
 	constructor(alphabet, a, b) {
 		this.alphabet = alphabet;
-		this.a = a;
-		this.b = b;
+		this.a = Number(a);
+		this.b = Number(b);
 		this.n = this.alphabet.length;
 		this.text = [];
 		this.result = [];
@@ -18,7 +18,15 @@ class caesarCipher {
 			} else {
 				let index = this.alphabet.indexOf(element);
 
-				let newIndex = (this.a * index + this.b) % this.n;
+				//console.log("Indice de " + element + ": " + index);
+
+				let newIndex = this.a * index;
+
+				newIndex = newIndex + this.b;
+
+				newIndex = newIndex % this.n;
+
+				//console.log("Nuevo indice de " + element + ": " + newIndex);
 
 				this.result.push(this.alphabet[newIndex]);
 			}
@@ -43,6 +51,20 @@ class caesarCipher {
 		});
 
 		return this.result.join("");
+	}
+
+	validate() {
+		let rtn = false;
+
+		if (
+			this.a < this.alphabet.length &&
+			this.a > 0 &&
+			this.b < this.alphabet.length &&
+			this.b > 0
+		) {
+			rtn = true;
+		}
+		return rtn;
 	}
 }
 
