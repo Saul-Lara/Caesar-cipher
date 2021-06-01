@@ -8,6 +8,16 @@
 			rel="stylesheet"
 			href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css"
 		/>
+		<link
+			href="https://fonts.googleapis.com/css?family=Roboto"
+			rel="stylesheet"
+			type="text/css"
+		/>
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="https://cdn.rawgit.com/fechanique/material-modal/master/material-modal.css"
+		/>
 		<script
 			defer
 			src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"
@@ -23,7 +33,39 @@
 		<title>Caesar cipher</title>
 	</head>
 	<body>
-		<section class="hero is-primary">
+		<nav class="navbar is-light" role="navigation" aria-label="main navigation">
+			<div class="navbar-brand">
+				<a class="navbar-item" href="https://saul-lara.github.io">
+					<h1>SAUL HERNANDEZ LARA</h1>
+				</a>
+
+				<button
+					class="navbar-burger is-light button"
+					aria-label="menu"
+					aria-expanded="false"
+					data-target="navbarBasicExample"
+				>
+					<span aria-hidden="true"></span>
+					<span aria-hidden="true"></span>
+					<span aria-hidden="true"></span>
+				</button>
+			</div>
+			<div id="navMenu" class="navbar-menu">
+				<div class="navbar-end">
+					<div class="navbar-item">
+						<div class="buttons">
+							<a
+								class="button is-dark"
+								href="https://github.com/Saul-Lara/Caesar-cipher"
+								><i class="fab fa-github"></i> &nbsp; Github Repo
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</nav>
+
+		<section class="hero is-small is-info">
 			<div class="hero-body">
 				<div class="container">
 					<h1 class="title">Caesar cipher</h1>
@@ -70,7 +112,7 @@
 		</div>
 
 		<div class="columns">
-			<div class="column mx-4">
+			<div class="column is-half mx-4">
 				<div class="field">
 					<label class="label">Message to encrypt / decrypt :</label>
 					<div class="control">
@@ -82,45 +124,40 @@
 					</div>
 				</div>
 
-				<div class="field is-grouped is-grouped-centered">
-					<div class="control">
-						<div class="field is-horizontal">
-							<div class="field-label is-normal">
-								<label class="label">a:</label>
-							</div>
-							<div class="field-body">
-								<div class="field">
-									<p class="control">
-										<input
-											class="input"
-											type="number"
-											id="valueA"
-											min="1"
-											value="1"
-										/>
-									</p>
-								</div>
-							</div>
+				<div class="field is-horizontal">
+					<div class="field-label is-normal">
+						<label class="label">a:</label>
+					</div>
+					<div class="field-body">
+						<div class="field">
+							<p class="control">
+								<input
+									class="input"
+									type="number"
+									id="valueA"
+									min="1"
+									value="1"
+								/>
+							</p>
 						</div>
 					</div>
-					<div class="control">
-						<div class="field is-horizontal">
-							<div class="field-label is-normal">
-								<label class="label">b:</label>
-							</div>
-							<div class="field-body">
-								<div class="field">
-									<p class="control">
-										<input
-											class="input"
-											id="valueB"
-											type="number"
-											min="1"
-											value="1"
-										/>
-									</p>
-								</div>
-							</div>
+				</div>
+
+				<div class="field is-horizontal">
+					<div class="field-label is-normal">
+						<label class="label">b:</label>
+					</div>
+					<div class="field-body">
+						<div class="field">
+							<p class="control">
+								<input
+									class="input"
+									id="valueB"
+									type="number"
+									min="1"
+									value="1"
+								/>
+							</p>
 						</div>
 					</div>
 				</div>
@@ -147,7 +184,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="column mx-4">
+			<div class="column is-half mx-4">
 				<div class="content">
 					<label class="label">Result :</label>
 					<p id="myTextResult"></p>
@@ -160,14 +197,21 @@
 				<p>
 					Developed by
 					<a href="https://github.com/Saul-Lara" class="tag is-dark is-medium">
-						<i class="fab fa-github"></i> Saul Lara
+						<i class="fab fa-github"></i> &nbsp; Saul Lara
 					</a>
-					. The source code is licensed
-					<a href="http://opensource.org/licenses/mit-license.php">MIT</a>
+				</p>
+				<p>
+					The source code is licensed
+					<a
+						class="tag is-link is-medium"
+						href="http://opensource.org/licenses/mit-license.php"
+						>MIT</a
+					>
 				</p>
 			</div>
 		</footer>
 
+		<script src="https://cdn.rawgit.com/fechanique/material-modal/master/material-modal.js"></script>
 		<script src="./app.js" type="module"></script>
 	</body>
 </html>
