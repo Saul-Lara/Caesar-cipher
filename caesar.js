@@ -18,15 +18,11 @@ class caesarCipher {
 			} else {
 				let index = this.alphabet.indexOf(element);
 
-				//console.log("Indice de " + element + ": " + index);
-
 				let newIndex = this.a * index;
 
 				newIndex = newIndex + this.b;
 
 				newIndex = newIndex % this.n;
-
-				//console.log("Nuevo indice de " + element + ": " + newIndex);
 
 				this.result.push(this.alphabet[newIndex]);
 			}
