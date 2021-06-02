@@ -61,6 +61,13 @@ var englishAlphabet = [
 ];
 
 document.addEventListener("DOMContentLoaded", function () {
+	var button = document.querySelector(".navbar-burger");
+	var menu = document.querySelector(".navbar-menu");
+	button.onclick = () => {
+		menu.classList.toggle("is-active");
+		button.classList.toggle("is-active");
+	};
+
 	var btn_cipher = document.getElementById("btn_cipher");
 	var btn_decipher = document.getElementById("btn_decipher");
 
@@ -77,19 +84,29 @@ document.addEventListener("DOMContentLoaded", function () {
 		} else if (selectedAlphabet == "English") {
 			alphabet = englishAlphabet;
 		} else {
-			return alert("Error selecting language.");
+			return materialAlert(
+				"Caesar cipher - Saul Lara",
+				"Error selecting language.",
+				() => {}
+			);
 		}
 
 		var cipher = new caesarCipher(alphabet, valueA, valueB);
 
 		if (!cipher.validate()) {
-			return alert(
-				"A and B must be less than " + alphabet.length + " and greater than 0"
+			return materialAlert(
+				"Caesar cipher - Saul Lara",
+				"A and B must be less than " + alphabet.length + " and greater than 0",
+				() => {}
 			);
 		}
 
 		if (text.length == 0) {
-			return alert("Fill the message field, please.");
+			return materialAlert(
+				"Caesar cipher - Saul Lara",
+				"Fill the message field, Please.",
+				() => {}
+			);
 		}
 
 		textResult.innerHTML = cipher.encrypt(text);
