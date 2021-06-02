@@ -113,15 +113,43 @@ document.addEventListener("DOMContentLoaded", function () {
 	});
 
 	btn_decipher.addEventListener("click", function () {
-		console.log("hola 2");
+		var selectedAlphabet = document.getElementById("mySelect").value;
+		var valueA = document.getElementById("valueA").value;
+		var valueB = document.getElementById("valueB").value;
+
+		var text = document.getElementById("myTextarea").value;
+		var textResult = document.getElementById("myTextResult");
+
+		if (selectedAlphabet == "Spanish") {
+			alphabet = spanishAlphabet;
+		} else if (selectedAlphabet == "English") {
+			alphabet = englishAlphabet;
+		} else {
+			return materialAlert(
+				"Caesar cipher - Saul Lara",
+				"Error selecting language.",
+				() => {}
+			);
+		}
+
+		var cipher = new caesarCipher(alphabet, valueA, valueB);
+
+		if (!cipher.validate()) {
+			return materialAlert(
+				"Caesar cipher - Saul Lara",
+				"A and B must be less than " + alphabet.length + " and greater than 0",
+				() => {}
+			);
+		}
+
+		if (text.length == 0) {
+			return materialAlert(
+				"Caesar cipher - Saul Lara",
+				"Fill the message field, Please.",
+				() => {}
+			);
+		}
+
+		textResult.innerHTML = cipher.decrypt(text);
 	});
 });
-
-/*
-var cipher = new caesarCipher(alphabet, a, b);
-
-var text = "krñd oxpgr";
-
-//console.log(cipher.encrypt(text));
-console.log(cipher.decrypt(text));
-*/
