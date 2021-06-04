@@ -20,11 +20,11 @@ A simple project developed with Html, Css and Javascript that allows us decrypt/
 
 ### Encrypt message
 
-![](readmeImages/image1.gif)
+![](readmeImages/encrypt.gif)
 
 ### Decrypt message
 
-![](readmeImages/image2.gif)
+![](readmeImages/decrypt.gif)
 
 ## :point_right: Online demo
 
