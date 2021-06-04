@@ -42,7 +42,12 @@ class caesarCipher {
 
 				let newIndex = ((index - this.b) / this.a) % this.n;
 
-				this.result.push(this.alphabet[newIndex]);
+				if (newIndex < 0) {
+					newIndex = this.alphabet.length - Math.abs(newIndex);
+					this.result.push(this.alphabet[newIndex]);
+				} else {
+					this.result.push(this.alphabet[newIndex]);
+				}
 			}
 		});
 
